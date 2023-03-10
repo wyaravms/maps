@@ -22,3 +22,4 @@ ggplot(mapdata, aes(lon, lat, group = group)) +
   geom_text(data = country.maps.labels, aes(x = long, y = lat, label = region, group = group)) +
   coord_fixed(ratio=1.6, xlim = c(23, 38), ylim = c(30,37.5))
 
+ggsave("figures/mediterranean-sea.png", width=8, height=5.5)
