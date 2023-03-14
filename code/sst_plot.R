@@ -4,7 +4,7 @@ sst = read_csv("data/sst.csv")
 sst %>%
   head()
 
-my_countries = c("Greece", "Turkey", "Cyprus", "Lebanon", "Egypt", "Libya")
+my_countries = c("Greece", "Turkey", "Cyprus", "Lebanon", "Egypt", "Libya", "Syria", "Palestine")
 
 mapdata = map_data("world") %>%
   arrange(group) %>% 
@@ -18,7 +18,7 @@ country.maps.labels <- mapdata %>%
 ggplot(mapdata, aes(lon, lat, group = group)) +
   geom_polygon(aes(group = group, fill = region), fill = "white", colour = "grey50") + 
   geom_point(aes(x = lon, y = lat, group = Type,
-                 colour = Type),  data = sst, size=1.5) +
+                 colour = Type),  data = sst, size=2) +
   geom_text(data = country.maps.labels, aes(x = long, y = lat, label = region, group = group)) +
   coord_fixed(ratio=1.6, xlim = c(23, 38), ylim = c(30,37.5))
 
